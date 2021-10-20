@@ -12,3 +12,12 @@ axios.interceptors.request.use(
     },
     (error) => Promise.reject(error)
 );
+
+axios.interceptors.response.use(
+    (response) => Promise.resolve(response),
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
+export default axios;
